@@ -35,3 +35,18 @@ resource "aws_instance" "vinaydevops_jenkins" {
     CreatedBy = "Terraform"
   }
 }
+
+resource "aws_instance" "vinaydevops_sonarqube" {
+  ami                    = var.ami
+  instance_type          = var.instance_type
+  key_name               = var.key_name
+  subnet_id              = var.subnet_id
+  vpc_security_group_ids = ["sg-0b619531d4da9d56a"]
+  iam_instance_profile   = var.iam_instance_profile
+  user_data              = file("sonarqube.sh")
+
+  tags = {
+    Name      = "vinaydevops_sonarqube"
+    CreatedBy = "Terraform"
+  }
+}
