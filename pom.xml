@@ -13,10 +13,10 @@
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         
-        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
-        <sonar.organization>awsdevops9</sonar.organization>
-        <sonar.projectKey>awsdevops9_demoaws</sonar.projectKey>
-        <sonar.login>dc60041df8531a4f6ecd50254803434bbbc3e835</sonar.login>
+        <sonar.host.url>http://44.204.144.29:9000</sonar.host.url>
+        <sonar.organization>vinaydevops</sonar.organization>
+        <sonar.projectKey>vinaydevops</sonar.projectKey>
+        <sonar.login>sqp_797a95d8eee91e1cddb4520ecf1ec6889b03adf7</sonar.login>
 
     </properties>
 
