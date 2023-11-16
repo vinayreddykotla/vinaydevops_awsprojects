@@ -21,6 +21,8 @@ terraform {
   }
 }
 
+# Continuous intigration - Jenkins
+
 resource "aws_instance" "vinaydevops_jenkins" {
   ami                    = var.ami
   instance_type          = var.instance_type
@@ -36,6 +38,8 @@ resource "aws_instance" "vinaydevops_jenkins" {
   }
 }
 
+# Contiouous static code analysis tool-sonarqube
+
 resource "aws_instance" "vinaydevops_sonarqube" {
   ami                    = var.ami
   instance_type          = var.instance_type
@@ -47,6 +51,23 @@ resource "aws_instance" "vinaydevops_sonarqube" {
 
   tags = {
     Name      = "vinaydevops_sonarqube"
+    CreatedBy = "Terraform"
+  }
+}
+
+# continuous binary code repository - JFROG
+
+resource "aws_instance" "vinaydevops_Jfrog" {
+  ami                    = var.ami
+  instance_type          = var.instance_type
+  key_name               = var.key_name
+  subnet_id              = var.subnet_id
+  vpc_security_group_ids = ["sg-0b619531d4da9d56a"]
+  iam_instance_profile   = var.iam_instance_profile
+  user_data              = file("jfrog.sh")
+
+  tags = {
+    Name      = "vinaydevops_JfrogS"
     CreatedBy = "Terraform"
   }
 }
