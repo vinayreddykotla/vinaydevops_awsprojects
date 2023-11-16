@@ -8,6 +8,7 @@ sudo cp -pvr /etc/environment "/etc/environment_$(date +%F_%R)"
 echo "JAVA_HOME=/usr/lib/jvm/java-17-amazon-corretto.x86_64/" >> /etc/environment
 echo "JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64/" >> /etc/environment 
 source /etc/environment
+cd /opt/
 sudo wget  https://releases.jfrog.io/artifactory/bintray-artifactory/org/artifactory/oss/jfrog-artifactory-oss/[RELEASE]/jfrog-artifactory-oss-[RELEASE]-linux.tar.gz  
 tar xvzf jfrog-artifactory-oss-\[RELEASE\]-linux.tar.gz 
 mv artifactory-oss-7.55.6/ jfrog
