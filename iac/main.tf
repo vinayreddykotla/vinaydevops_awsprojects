@@ -71,3 +71,20 @@ resource "aws_instance" "vinaydevops_Jfrog" {
     CreatedBy = "Terraform"
   }
 }
+
+# Application server Apache Tomcat
+
+resource "aws_instance" "vinaydevops_tomcat" {
+  ami                    = var.ami
+  instance_type          = var.instance_type
+  key_name               = var.key_name
+  subnet_id              = var.subnet_id
+  vpc_security_group_ids = ["sg-0b619531d4da9d56a"]
+  iam_instance_profile   = var.iam_instance_profile
+  user_data              = file("tomcat.sh")
+
+  tags = {
+    Name      = "vinaydevops_tomcat"
+    CreatedBy = "Terraform"
+  }
+}
